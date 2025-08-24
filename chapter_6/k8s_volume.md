@@ -58,6 +58,7 @@ spec:
 
 기본 개념은 비슷하지만, Kubernetes는 **여러 컨테이너를 하나의 파드로 묶어서 관리**하는 점이 가장 큰 차이점입니다.
 
+<br>
 
 ## 볼륨의 생명주기
 ---
@@ -78,6 +79,7 @@ spec:
 |**NFS**|✅ 유지|✅ 유지|✅ 유지|NFS 서버에 따라|
 |**클라우드**|✅ 유지|✅ 유지|✅ 유지|정책에 따라|
 
+<br>
 
 ## 내부 vs 외부 저장소
 ---
@@ -108,7 +110,7 @@ volumes:
     claimName: aws-ebs-pvc  # AWS EBS 등
 ```
 
-
+<br>
 
 ## 주요 볼륨 타입들
 ---
@@ -284,7 +286,7 @@ volumes:
         fieldPath: metadata.annotations
 ```
 
-
+<br>
 
 ## 기반 스토리지 기술과 파드 분리 (PV/PVC/StorageClass)
 ---
@@ -499,7 +501,7 @@ PV가 해제될 때 어떤 동작을 해야 할지 쿠버네티스에게 알려�
 
 **주의사항:** `Recycle` 옵션은 GCE 퍼시스턴트 디스크에서 지원되지 않는 등, 볼륨 유형마다 지원 여부가 다를 수 있으므로 정책 확인이 필요합니다.
 
-
+<br>
 
 ## PV의 동적 프로비저닝 (StorageClass)
 ---
@@ -677,6 +679,7 @@ allowVolumeExpansion: true
 kubectl patch pvc my-claim -p '{"spec":{"resources":{"requests":{"storage":"200Gi"}}}}'
 ```
 
+<br>
 
 ## 볼륨 스냅샷 및 복제
 ---
@@ -796,6 +799,7 @@ spec:
     apiGroup: ""
 ```
 
+<br>
 
 ## 보안 고려사항
 ---
@@ -847,6 +851,7 @@ volumes:
       path: server.key
 ```
 
+<br>
 
 ## 모니터링 및 문제 해결
 ---
